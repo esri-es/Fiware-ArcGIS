@@ -120,8 +120,7 @@ Veamos a continuación las variables contenidas en el fichero:
 * **sensors**: es un objecto que incluye tantos objetos como sensores vayamos a recibir (dependerá de las suscripciones realizadas al context broker), por cada sensor deberemos indicar:
   * **serviceName**: nombre que queremos que tenga el servicio en el que alojaremos los datos
   * **route**: ruta en la que queremos que el servicio quede a la escucha de la información del sensor
-  * **fields**: un array de arrays con el nombre de los atributos del sensor que deseamos almacenar en la capa
-  * **attrtypes**: información sobre el tipo de dato de cada *attr* que queremos que contenga la capa almacenada en el servicio
+  * **fields**: un array de arrays con el nombre de los atributos y el tipo del sensor que deseamos almacenar en la capa
 
 En la siguiente imagen se muestran dónde se pueden encontrar los valores de **services_url** y **account_id** en ArcGIS Online:
 <img src="/fiware/docs/fiware_agol_params.png" style="width:100%">
