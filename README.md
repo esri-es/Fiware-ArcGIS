@@ -123,4 +123,4 @@ Veamos a continuación las variables contenidas en el fichero:
   * **fields**: un array de arrays con el nombre de los atributos y el tipo del sensor que deseamos almacenar en la capa
 
 En la siguiente imagen se muestran dónde se pueden encontrar los valores de **services_url** y **account_id** en ArcGIS Online:
-<img src="/fiware/docs/fiware_agol_params.png" style="width:100%">
+<img src="/docs/fiware_agol_params.png" style="width:100%">
