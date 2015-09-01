@@ -12,34 +12,41 @@ var sensors = {};
 app.use('/static', express.static('data'));
 app.use( bodyParser.json() );
 
-var server = app.listen(config.port, function () {
-    var host = server.address().address;
-    var port = server.address().port;
 
-    service.getToken().then(function(response){
+service.getToken().then(function(response){
+    
+    if(response.error){
+        console.log("Response: %s", JSON.stringify(response.error));
+    }else{
+        var server = app.listen(config.port, function () {
+            var host = server.address().address;
+            var port = server.address().port;
+
+            console.log('fiware_agol listening at http://%s:%s', host, port);
+        });
+        
         // Init all sensors's feature services
         for (key in config.sensors) {
             if (config.sensors.hasOwnProperty(key)) {
                 initFeatureService(config.sensors[key]);
             }
         }
-    });
 
-    console.log('fiware_agol listening at http://%s:%s', host, port);
+        var key;
+        for (key in config.sensors) {
+            if (config.sensors.hasOwnProperty(key)) {
+                (function(key){
+                    s = config.sensors[key];
+                    console.log("Listening at: %s", s.route);
+                    app.post(s.route, function (req, res) {
+                        sendToArcGIS(config.sensors[key], req, res);
+                    });
+                })(key);
+            }
+        }
+    }
 });
 
-var key;
-for (key in config.sensors) {
-    if (config.sensors.hasOwnProperty(key)) {
-        (function(key){
-            s = config.sensors[key];
-            console.log("Listening at: %s", s.route);
-            app.post(s.route, function (req, res) {
-                sendToArcGIS(config.sensors[key], req, res);
-            });
-        })(key);
-    }
-}
 
 
 /************************************************************
