@@ -1,0 +1,11 @@
+{
+  "name": "fiware_arcgis",
+  "version": "1.5.0",
+  "dependencies": {
+    "arc-node": "^0.2.9",
+    "arcgis-json-objects": "0.0.7",
+    "body-parser": "~1.13.1",
+    "express": "~4.13.0",
+    "node-promise": "^0.5.12"
+  }
+}

@@ -1,0 +1,86 @@
+{
+    "debug": true,
+    "port": 4003,
+    "username": "<tu usuario>",
+    "password": "<tu password>",
+    "root_url": "www.arcgis.com",
+    "services_url": "services1.arcgis.com",
+    "account_id": "<tu id de cuenta>",
+
+    "sensors":{
+
+        "traffic" : {
+            "serviceName": "Sensores tipo TRAFFIC de Santander",
+            "route": "/santander_traffic",
+            "fields": [
+                ["TimeInstant", "esriFieldTypeDate"],
+                ["id", "esriFieldTypeString"],
+                ["Latitud", "esriFieldTypeDouble"],
+                ["Longitud", "esriFieldTypeDouble"],
+                ["average_speed", "esriFieldTypeDouble"],
+                ["median_speed", "esriFieldTypeDouble"],
+                ["occupancy", "esriFieldTypeDouble"],
+                ["trafficIntensity", "esriFieldTypeDouble"]
+            ]
+        },
+
+        "lux" : {
+            "serviceName": "Sensores tipo LUX de Santander",
+            "route": "/santander_lux",
+            "fields": [
+                ["TimeInstant", "esriFieldTypeDate"],
+                ["id", "esriFieldTypeString"],
+                ["Latitud", "esriFieldTypeDouble"],
+                ["Longitud", "esriFieldTypeDouble"],
+                ["temperature", "esriFieldTypeDouble"],
+                ["luminousFlux", "esriFieldTypeDouble"],
+                ["batteryCharge", "esriFieldTypeDouble"],
+                ["acceleration", "esriFieldTypeDouble"]
+            ]
+        },
+
+        "sound" : {
+            "serviceName": "Sensores tipo SOUND Santander",
+            "route": "/santander_sound",
+            "fields": [
+                ["TimeInstant", "esriFieldTypeDate"],
+                ["id", "esriFieldTypeString"],
+                ["Latitud", "esriFieldTypeDouble"],
+                ["Longitud", "esriFieldTypeDouble"],
+                ["sound", "esriFieldTypeDouble"],
+                ["batteryCharge", "esriFieldTypeDouble"]
+            ]
+        },
+
+        "soundacc" : {
+            "serviceName": "Sensores tipo SOUNDACC Santander",
+            "route": "/santander_soundacc",
+            "fields": [
+                ["TimeInstant", "esriFieldTypeDate"],
+                ["id", "esriFieldTypeString"],
+                ["Latitud", "esriFieldTypeDouble"],
+                ["Longitud", "esriFieldTypeDouble"],
+                ["sound", "esriFieldTypeDouble"],
+                ["batteryCharge", "esriFieldTypeDouble"],
+                ["acceleration", "esriFieldTypeDouble"]
+            ]
+        },
+
+        "bus" : {
+            "serviceName": "Sensores tipo BUS Santander",
+            "route": "/santander_bus",
+            "fields": [
+                ["TimeInstant", "esriFieldTypeDate"],
+                ["TimeInstantModified", "esriFieldTypeDate"],
+                ["id", "esriFieldTypeString"],
+                ["index", "esriFieldTypeString"],
+                ["line", "esriFieldTypeString"],
+                ["position", "esriFieldTypeString"],
+                ["service", "esriFieldTypeDouble"],
+                ["speed", "esriFieldTypeDouble"],
+                ["status", "esriFieldTypeDouble"],
+                ["vehicle", "esriFieldTypeDouble"]
+            ]
+        }
+    }
+}
