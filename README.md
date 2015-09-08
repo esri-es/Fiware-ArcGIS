@@ -14,7 +14,6 @@ $ npm install
 $ node fiware_arcgis.js 
 ```
 
-Con esta orden lanzamos el servidor y queda a la espera de recibir peticiones del Context Broker para procesar la información y añadirla a ArcGIS Online/Server.
 With these commands we launched the server and waits until we receive any requests from the Context Broker to process the information and add it to ArcGIS Online / Server.
 
 ## Configuration file
